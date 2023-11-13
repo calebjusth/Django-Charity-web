@@ -1,0 +1,88 @@
+{% extends "../info/index.html" %}
+{% load static %}
+{% block content %}
+
+
+<section class="home_partner" id="home_partner">
+    <div class="home-text">
+        <center>
+      <h1>Your Welcome <br>to our Partnership page </h1>
+      <h4>God's Glory Day In't church</h4>
+      <a href="#category" id="btn" class="btn">EXPLORE</a>
+        <center>
+    </div>
+    
+ </section>
+
+<!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" id='category' aria-label="category">
+        <div class="container">
+
+          <p class="section-subtitle">Donation Method</p>
+
+          <h2 class="h2 section-title">
+            Support the cause of the <br><span class="span">Kingdom</span> 
+          </h2>
+
+          <p class="section-text">
+            Donate via the below payment method
+          </p>
+
+          <ul class="grid-list">
+            {% for d in donation_method  %}
+            <li>
+              <div class="category-card" style="--color: 170, 75%, 41%">
+
+                <div class="card-icon">
+                  <img src="{{d.image.url}}" width="40" height="40" loading="lazy"
+                    alt="err loading image" class="img">
+                </div>
+
+                <h3 class="h3">
+                  <a href="{{d.gateway_link}}" class="card-title">{{d.payment_gateway_name}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{d.description}}
+                </p>
+                <a href="{{d.gateway_link}}" >
+                  <span class="card-badge">Donate</span>
+                </a>
+              </div>
+            </li>
+            {% endfor %}
+
+            
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+<section>
+  <a href="{% url "form" %}">
+    <button id="openFormButton" class='btn'>Become a Partner</button>
+  </a>
+
+  <!-- Popup form -->
+
+  <!-- Thank you message -->
+  <div id="thankYouMessage" class="popup">
+    <h2>Thank you for partnering with us!</h2>
+  </div>
+</section>
+ 
+
+
+<script src="{% static 'js/popup.js' %}"></script>
+ 
+{% endblock content %}

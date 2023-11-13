@@ -1,0 +1,23 @@
+{% extends "../info/index.html" %}
+{% load static %}
+
+{% block content %}
+<section style='margin-top:3em;'>
+    <h1>Glory of God day In'l Church</h1>
+    <div style="display:flex; gap:15px;">
+        <h4>Partnership Form</h4>
+        <img src="{% static 'images/home/canada flag.webp' %}" width="50px" height="30px">
+    </div>
+
+<form action="{% url 'form' %}" method="POST" class="my-form">
+    {% csrf_token %}
+{{form.as_p}}
+<br><br>
+<input type="submit" value="Submit" >
+</form>
+
+
+</section>
+
+
+{% endblock content %}

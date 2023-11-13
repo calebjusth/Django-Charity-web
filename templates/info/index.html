@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/edu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/partner.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css'  %}">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+    
+</head>
+    <title>Prophet Mesfin Abulo</title>
+    <style>
+      .goog-logo-link {
+        display:none !important;
+     }
+     
+     .goog-te-gadget {
+        color: transparent !important;
+     }
+     
+     .goog-te-gadget .goog-te-combo {
+        color: blue !important;
+     }
+     
+     
+    </style>
+</head>
+
+<body id="top">
+    <header class="header" data-header>
+        <div class="container">
+    
+          <a href="/" class="logo">
+            Mesfin Abulo
+          </a>
+    
+          <nav class="navbar" data-navbar>
+    
+            <div class="wrapper">
+              <a href="/" class="logo">
+                Mesfin Abulo 
+            </a>
+    
+              <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+    
+            <ul class="navbar-list">
+    
+              <li class="navbar-item">
+                <a href="/#home" class="navbar-link" data-nav-link>Home</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="/#about" class="navbar-link" data-nav-link>About</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="/edu/" class="navbar-link" data-nav-link>Courses</a>
+              </li>
+
+              <li class="navbar-item">
+                <a href="/fin/partner/" class="navbar-link" data-nav-link>Partner</a>
+              </li>
+    
+              <li class="navbar-item">
+                <a href="/#contact" class="navbar-link" data-nav-link>Contact</a>
+              </li>
+    
+            </ul>
+    
+          </nav>
+    
+          <div class="header-actions">
+            <div id="google_translate_element"></div>
+    
+            <a href="https://paypal.me/mesfinTumoro/" class="btn has-before">
+              <span class="span">Donate</span>
+    
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+    
+            <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+    
+          </div>
+    
+          <div class="overlay" data-nav-toggler data-overlay></div>
+    
+        </div>
+      </header>
+
+
+    {% block content %}
+    {% endblock content %}
+    
+
+    <footer class="footer">
+
+        <div class="footer-top section">
+          <div class="container grid-list">
+    
+            <div class="footer-brand">
+    
+              <a class="logo">
+                    Mesfin Abulo    
+            </a>
+    
+              <p class="footer-brand-text">
+                Bringing the Gospel all over the world
+              </p>
+    
+              <div class="wrapper">
+                <span class="span">Add:</span>
+    
+                <address class="address">70-80 Upper St Norwich NR2</address>
+              </div>
+    
+              <div class="wrapper">
+                <span class="span">Call:</span>
+    
+                <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+              </div>
+    
+              <div class="wrapper">
+                <span class="span">Email:</span>
+    
+                <a href="mailto:info@eduweb.com" class="footer-link">info@eduweb.com</a>
+              </div>
+    
+            </div>
+    
+            <ul class="footer-list">
+    
+              <li>
+                <p class="footer-list-title">Online Platform</p>
+              </li>
+    
+              <li>
+                <a href="/#about" class="footer-link">About</a>
+              </li>
+    
+              <li>
+                <a href="/edu/" class="footer-link">Courses</a>
+              </li>
+    
+              <li>
+                <a href="{% url "member" %}" class="footer-link">members</a>
+              </li>
+    
+    
+              <li>
+                <a class="footer-link">Purchase Guide</a>
+              </li>
+    
+            </ul>
+    
+            <ul class="footer-list">
+    
+              <li>
+                <p class="footer-list-title">Links</p>
+              </li>
+    
+              <li>
+                <a href="/#about" class="footer-link">Contact Us</a>
+              </li>
+              
+              <li>
+                <a href="{% url "form" %}" class="footer-link">become a partner</a>
+              </li>
+
+              <li>
+                <a href="{% url "student_form" %}" class="footer-link">Enrollment form</a>
+              </li>
+
+    
+              <li>
+                <a href="/admin/" class="footer-link">Staff</a>
+              </li>
+    
+            </ul>
+    
+            <div class="footer-list">
+    
+              <p class="footer-list-title">Contacts</p>
+    
+              <p class="footer-list-text">
+                Enter your email address to register to our newsletter subscription
+              </p>
+    
+              <form action="" class="newsletter-form">
+                <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+    
+                <button type="submit" class="btn has-before">
+                  <span class="span">Subscribe</span>
+    
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </button>
+              </form>
+    
+              <ul class="social-list">
+    
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+    
+                <li>
+                  <a href="https://youtube.com/@glorydaytv6440?si=72dyYnv9TM3K4y7g/" class="social-link">
+                    <ion-icon name="logo-youtube"></ion-icon>
+                  </a>
+                </li>
+    
+              </ul>
+    
+            </div>
+    
+          </div>
+        </div>
+    
+        <div class="footer-bottom">
+          <div class="container">
+    
+            <p class="copyright">
+              Copyright 2023 All Rights Reserved | Prophet Mesfin Abulo | Built and deployed by <a href="https://t.me/alpha_valley" class="copyright-link">Alpha Tech Valley</a>
+            </p>
+    
+          </div>
+        </div>
+    
+      </footer>
+
+    <script src="{% static 'js/scripts.js' %}" defer></script>
+    <script src="{% static "js/translation.js" %}"></script>
+
+   
+      <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  <script type="text/javascript">
+     
+     const sr = ScrollReveal ({
+         distance: '40px',
+         duration: 2600,
+         reset: true,
+     })
+     
+    sr.reveal('.home-text',{delay:300, origin:'left'})
+    sr.reveal('.about, .services',{delay:70, orgin:'bottom'})
+    
+    
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "../info/index.html" %}
+{% load static %}
+{% block content %}
+
+
+<section style='margin-top:3em;'>
+    <h1>Glory of God day In'l Church</h1>
+    <div style="display:flex; gap:15px;">
+        <h4>Online Membership Form</h4>
+        <img src="{% static 'images/home/canada flag.webp' %}" width="50px" height="30px">
+    </div>
+
+<form action="{% url 'member' %}" method="POST" class="my-form">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    
+    <br><br>
+    <input type="submit" value='submit' class="btn">
+</form>
+</section>
+
+    {% endblock content %}

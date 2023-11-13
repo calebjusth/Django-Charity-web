@@ -1,0 +1,31 @@
+{% extends "../info/index.html" %}
+{% load static %}
+{% block content %}
+
+
+<section  style='margin-top:3em;'>
+    <h1>Glory of God day In'l Church</h1>
+    <div style="display:flex; gap:15px;">
+        <h4>Online Student Enrollment Form</h4>
+        <img src="{% static 'images/home/canada flag.webp' %}" width="50px" height="30px">
+    </div>
+
+
+    <form method="POST" action="{% url "student_form" %}" class="my-form">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <input type="submit" value='Enroll'>
+        <p>* Kindly Insure that the information you fill is accurate as those are the means we will use to contact you</p>
+    </form>
+
+
+</section>
+
+
+
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,387 @@
+{% extends "../info/index.html" %}
+{% load static %}
+{% block content %}
+<main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" id="home" aria-label="home"
+        style="background-image: url('./assets/images/hero-bg.svg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 section-title">
+              Start your Trip of <span class="span">Spiritual</span> Empowerement
+            </h1>
+
+            <p class="hero-text">
+              An Online Life Changing Bible Training
+            </p>
+
+            <a href="#course" class="btn has-before">
+              <span class="span">Find courses</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+
+          </div>
+
+          <figure class="hero-banner">
+
+            <div class="img-holder one" style="--width: 270; --height: 300;">
+              <img src="{% static 'images/home/pro.jpg' %}" width="270" height="300" alt="hero banner" class="img-cover">
+            </div>
+
+            <div class="img-holder two" style="--width: 240; --height: 370;">
+              <img src="{% static 'images/home/prophetblck.jpg' %}" width="240" height="370" alt="hero banner" class="img-cover">
+            </div>
+
+            <img src="{% static 'images/assets/img/hero-shape-1.svg' %}" width="380" height="190" alt="" class="shape hero-shape-1">
+
+            <img src="{% static 'images/assets/img/hero-shape-2.png' %}" width="622" height="551" alt="" class="shape hero-shape-2">
+
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about_edu" id="about_edu" aria-label="about_edu">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <div class="img-holder" style="--width: 520; --height: 370;">
+              <img src="{% static 'images/home/p.jpg' %}" width="520" height="370" loading="lazy" alt="about banner"
+                class="img-cover">
+            </div>
+
+            <img src="{% static 'images/assets/img/about-shape-1.svg' %}" width="360" height="420" loading="lazy" alt=""
+              class="shape about-shape-1">
+
+            <img src="{% static 'images/assets/img/about-shape-2.svg' %}" width="371" height="220" loading="lazy" alt=""
+              class="shape about-shape-2">
+
+            <img src="{% static 'images/assets/img/about-shape-3.png' %}" width="722" height="528" loading="lazy" alt=""
+              class="shape about-shape-3">
+
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="h2 section-title">
+              Led by Prophet Mesfin Abulo <span class="span">Conducting Online</span> Bible Trainings
+            </h2>
+
+            <p class="section-text">
+              Join and Experince the life changing anointing and teachings
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Expert Trainers</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Online Remote Learning</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Lifetime Access</span>
+              </li>
+
+            </ul>
+
+            <img src="{% static 'images/assets/img/about-shape-4.svg' %}" width="100" height="100" loading="lazy" alt=""
+              class="shape about-shape-4">
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+      <!-- 
+        - #COURSE
+      -->
+
+      <section class="section course" id="courses" aria-label="course">
+        <div class="container">
+
+          <p class="section-subtitle">Popular Courses</p>
+
+          <h2 class="h2 section-title">Check Out our Courses</h2>
+
+          <ul class="grid-list">
+            {% for c in course %}
+            <li>
+              
+              <div class="course-card">
+
+                <figure class="card-banner img-holder" style="--width: 370; --height: 220;">
+                  <img src="{{c.image.url}}" width="370" height="220" loading="lazy"
+                    alt="images" class="img-cover">
+                </figure>
+
+                <div class="abs-badge">
+                  <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                  <span class="span">{{c.duration}}</span>
+                </div>
+
+                <div class="card-content">
+
+                  <span class="badge">{{c.app}}</span>
+
+                  <h3 class="h3">
+                    <a class="card-title">{{c.title}}</a>
+                  </h3>
+
+                  <div class="wrapper">
+
+                    <div class="rating-wrapper">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <p class="rating-text">(5.0/7 Rating)</p>
+
+                  </div>
+
+                  <data class="price" value="29">{{c.payment}}</data>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">{{c.number_of_lessons}} Lessons</span>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+
+            
+            
+
+          </ul>
+
+          <a href="{% url "student_form" %}" class="btn has-before">
+            <span class="span">Enroll</span>
+
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #VIDEO
+      -->
+
+      <section class="video has-bg-image" aria-label="video"
+        style="background-image: url('./assets/images/video-bg.png')">
+        <div class="container">
+
+          <div class="video-card">
+
+            <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
+              <img src="{% static 'images/assets/img/video-banner.jpg' %}" width="970" height="550" loading="lazy" alt="video banner"
+                class="img-cover">
+
+              <button class="play-btn" aria-label="play video">
+                <ion-icon name="play" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+
+            <img src="{% static 'images/assets/img/video-shape-1.png' %}" width="1089" height="605" loading="lazy" alt=""
+              class="shape video-shape-1">
+
+            <img src="{% static 'images/assets/img/video-shape-2.png' %}" width="158" height="174" loading="lazy" alt=""
+              class="shape video-shape-2">
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #STATE
+      -->
+
+      <section class="section stats" aria-label="stats">
+        <div class="container">
+
+          <ul class="grid-list">
+            {% for t in track  %}
+
+            <li>
+              <div class="stats-card" style="--color: 170, 75%, 41%">
+                <h3 class="card-title">{{t.number_of_testimonials}}</h3>
+
+                <p class="card-text">Testimonies</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="stats-card" style="--color: 351, 83%, 61%">
+                <h3 class="card-title">32.4K</h3>
+
+                <p class="card-text">Class Completed</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 260, 100%, 67%">
+                <h3 class="card-title">100%</h3>
+
+                <p class="card-text">Satisfaction Rate</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 42, 94%, 55%">
+                <h3 class="card-title">{{t.number_of_instructors}}</h3>
+
+                <p class="card-text">Top Instructors</p>
+              </div>
+            </li>
+            {% endfor %}
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog has-bg-image" id="blog" aria-label="blog">
+        <div class="container">
+
+          <p class="section-subtitle">Testimonies</p>
+
+          <h2 class="h2 section-title">What students are saying</h2>
+
+          <ul class="grid-list">
+            {% for t in testimonial  %}
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                  <img src="{{t.image.url}}" width="370" height="370" loading="lazy"
+                    alt="Become A Better Blogger: Content Planning" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+
+                  <h3 class="h3">
+                    <a class="card-title">{{t.name}}</a>
+                  </h3>
+
+                  <p class="card-text">
+                    {{t.summary_of_testimoney}}
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+            
+          </ul>
+
+          <img src="{% static 'images/assets/img/blog-shape.png' %}" width="186" height="186" loading="lazy" alt=""
+            class="shape blog-shape">
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+
+{% endblock content %}

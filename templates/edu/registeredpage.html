@@ -1,0 +1,58 @@
+{% extends "../info/index.html" %}
+{% load static %}
+{% block content %}
+
+
+<section  style='margin-top:3em;'>
+    <section class="section category" id='category' aria-label="category">
+        <div class="container">
+
+          <p class="section-subtitle">Vital Info</p>
+
+          <h2 class="h2 section-title">
+            Kindly make a deposite of <br><span class="span">50$</span> fee to complete your registraion
+          </h2>
+
+          <p class="section-text">
+            Pay with any of the methods below<br>
+            Once done send your receipt to us on <a href='https://t.me/' style="color:blue;">This Telegram Account</a>
+          </p>
+
+          <ul class="grid-list">
+            {% for d in donation_method  %}
+            <li>
+              <div class="category-card" style="--color: 170, 75%, 41%">
+
+                <div class="card-icon">
+                  <img src="{{d.image.url}}" width="40" height="40" loading="lazy"
+                    alt="err loading image" class="img">
+                </div>
+
+                <h3 class="h3">
+                  <a href="{{d.gateway_link}}" class="card-title">{{d.payment_gateway_name}}</a>
+                </h3>
+
+                <p class="card-text">
+                  {{d.description}}
+                </p>
+                
+                <a href="{{d.gateway_link}}" >
+                  <span class="card-badge">Pay</span>
+                </a>
+              </div>
+            </li>
+            {% endfor %}
+
+            
+
+          </ul>
+          <center>
+            <a href="https://t.me/" class="btn">SEND US RECEIPT  <i class="fa fa-telegram" ></i></a>
+          </center>
+        </div>
+      </section>
+
+
+</section>
+
+{% endblock content %}

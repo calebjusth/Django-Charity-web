@@ -1,0 +1,254 @@
+{% extends "./index.html" %}
+{% load static %}
+{% block content %}
+
+<!---
+    home section
+-->
+<section class="home" id="home">
+    <div class="home-text">
+      <h1>Prophet Mesfin Abulo </h1>
+      <h4>Bringing God's Glory Day to every house</h4>
+      <a href="#about" id="btn" class="btn">Read More</a>
+      
+    </div>
+    
+ </section>
+
+
+ <!---
+    About section
+-->
+ <section class="about" id="about">
+  {% for a in about %}
+    <div class="about-img">
+       <img src="{{a.image.url}}">
+    </div>
+    <div class="about-text">
+         <h2>About The Prophet </h2>
+         <p>
+            {{a.about_the_prophet}}
+         </p>
+         <ul class="social-list">
+    
+            <li>
+              <a href="{{a.facebook_link}}" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="{{a.whats_app_link}}" class="social-link">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="{{a.instagram_link}}" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="{{a.twitter_link}}" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="{{a.youtube_link}}" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul><br><br>
+
+         <a href="mailto:Mesfin.abulo@gmail.com/" title="An Invitation to Prophet Mesfin Abulo" class="btn">Invite the Man of God</a>
+    </div>
+    {% endfor %}
+  </section>
+
+
+  <!---Service section-->
+<section class="services" id="services">
+    <div class="heading">
+       <h6>Church Services </h6>
+       <h2>Come and be part of the blessings and prophetic unction</h2>
+       <p>I was glad when they said unto me<br> Let us go into the house of the LORD.</p>
+    </div>
+
+
+
+
+    <div class="container">
+
+        <ul class="grid-list">
+          {% for s in church_program %}
+
+          <li>
+            <div class="blog-card">
+
+              <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                <img src="{{s.image.url}}" width="370" height="370" loading="lazy"
+                  alt="Join us and be part of the blessings" class="img-cover">
+              </figure>
+
+              <div class="card-content">
+
+                <a href="#" class="card-btn" aria-label="read more">
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+                <a href="#" class="card-subtitle">{{s.service_day}}</a>
+
+                <h3 class="h3">
+                  <a href="#" class="card-title">Join us and be part of the blessings</a>
+                </h3>
+
+                <ul class="card-meta-list">
+
+                  <li class="card-meta-item">
+                    <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+
+                    <span class="span">{{s.service_time}}</span>
+                  </li>
+
+                </ul>
+
+                <p class="card-text">
+                    {{s.features}}</p>
+
+              </div>
+
+            </div>
+          </li>
+          {% endfor %}
+
+        </ul>
+        <img src="{% static 'images/assets/img/blog-shape.png' %}" width="186" height="186" loading="lazy" alt=""
+        class="shape blog-shape">
+
+        
+      </div>
+    
+    </section>
+
+
+      <!---charity section-->
+<section class="services" id="services">
+    <div class="heading">
+       <h6>charity</h6>
+       <h2>Our Charity Works</h2>
+       <p>Helping the poor and the needy</p>
+    </div>
+
+
+
+
+    <div class="container">
+
+        <ul class="grid-list">
+          {% for c in charity %}
+          <li>
+            <div class="blog-card">
+
+              <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
+                <img src="{{c.image.url}}" width="370" height="370" loading="lazy"
+                  alt="Join us and be part of the blessings" class="img-cover">
+              </figure>
+
+              <div class="card-content">
+
+                <h3 class="h3">
+                  <a class="card-title">{{c.title}}</a>
+                </h3>
+
+                
+                <p class="card-text">
+                    {{c.discription}}</p>
+
+              </div>
+
+            </div>
+          </li>
+          {% endfor %}
+          
+          <img src="{% static 'images/assets/img/blog-shape.png' %}" width="186" height="186" loading="lazy" alt=""
+          class="shape blog-shape">
+
+
+        </ul>
+
+        
+      </div>
+    
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="about-text">
+            <h2>Support Us </h2>
+            <h3>Let's Reach Out together</h3>
+            <p>
+               Let's reach out to the needy and less previlaged, as the bible says "Give and it shall be given unto you..." with your support we can reach out to more people, as you do so expect the blessings of the Lord to be given unto you
+            </p>
+   
+            <a href="/" class="btn">DONATE</a>
+       </div>
+       
+        <div class="about-img">
+            <img src="{% static 'images/home/prophetblck.jpg' %}">
+        </div>
+        
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-form">
+          <h1>Contact Us</h1>
+            <div style="gap:20px; display: flex;">
+            <div>
+                <h3>Call Us:</h3>
+            </div>
+            <div style="gap:20px; display:flex;">
+              <a href="tel:">
+                <i class="fa fa-phone"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-whatsapp"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-telegram"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-email"></i>
+              </a>
+            </div>
+            </div>
+          <form>
+            <input type="text" placeholder="Your Name" name="" required>
+            <input type="email" placeholder="E-mail" name="" required>
+            <input type="text" placeholder="Write a Subject" name="" required>
+            <textarea name="" id="textarea" cols="30" rows="10" placeholder="Your message" required>
+              
+            </textarea>
+      
+            <input type="submit" name="" value="Submit" class="btn">
+          </form>
+        </div>
+      
+        <div class="contact-img">
+          <img src="{% static 'images/home/prophet_sa.jpg' %}">
+          
+        </div>
+      </section>
+      
+    
+
+    
+    
+ 
+
+
+
+
+{% endblock content %}
